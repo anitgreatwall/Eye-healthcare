@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f0f9ff;
+  color: #0f172a;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* 防止训练时误选文字 */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-4;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold transition active:scale-95 disabled:opacity-50 disabled:active:scale-100;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-ghost {
+    @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200;
+  }
+  .btn-grass {
+    @apply btn bg-grass-500 text-white hover:bg-grass-600;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+}
