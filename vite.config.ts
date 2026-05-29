@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+// 生产构建部署到 GitHub Pages 项目站点 /Eye-healthcare/，开发时仍用根路径
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/Eye-healthcare/' : '/',
   plugins: [
     react(),
     VitePWA({
@@ -32,4 +34,4 @@ export default defineConfig({
     host: true,
     port: 5173,
   },
-})
+}))
